@@ -1,0 +1,68 @@
+/**
+  Header Section
+*/
+.header-section {
+
+  .container {
+
+    .content {
+      margin: 80px 0px;
+
+      .logo-section {
+        > img {
+          cursor: pointer;
+          width: 175px;
+          height: 70px;
+        }
+      }
+
+      .menu-list {
+
+        > div {
+          cursor: pointer;
+          margin-left: 30px;
+          span {
+            color: #FFFFFF;
+            font-size: 16px;
+          }
+          &.multi-lang {
+
+            .multi-lang-click {
+              > img {
+                width: 26px;
+                height: 26px;
+                border-radius: 50%;
+                margin-right: 6px;
+              }
+            }
+            
+            .sub-menu {
+              transition: all 0.3s linear;
+              margin-top: 5px;
+              right: 0px;
+              border-radius: 5px;
+              background: #202429;
+              border: 1px solid grey;
+              overflow: hidden;
+
+              .item {
+                justify-content: space-around;
+                padding: 5px 10px;
+                transition: all 0.3s linear;
+                &:hover {
+                  background-color: white;
+                  > span {
+                    color: #202429;
+                  }
+                }
+                > img {
+                  margin-right: 6px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
