@@ -21,7 +21,7 @@ const Home = () => {
       <div className="portfolio-projects-section">
         <div className="container">
           <div className="row">
-            <div className="col-md-6 d-flex align-items-center">
+            <div className="col-md-6 col-lg-6 col-sm-12 d-flex align-items-center">
               <div className="text-section">
                 <h1>Lorem ipsum dolor sit amet, cu exerci everti regione mea, iudico </h1>
                 <p>Lorem ipsum dolor sit amet, cu exerci everti regione mea, iudico vocent alterum nam ut. Id doming viderer qui, populo scripserit </p>
@@ -31,7 +31,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6 col-lg-6 col-sm-12">
               <div className="position-relative img-section">
                 <img src={portfolio} alt="big-phone" className="portfilio-img" />
                 <img src={projects} alt="projects" className="position-absolute small-img" />
