@@ -6,7 +6,8 @@ import { useHistory } from 'react-router-dom';
 
 const Header = () => {
   const history = useHistory();
-  const [isSubMenu, setIsSubMenu] = useState(false)
+  const [isSubMenu, setIsSubMenu] = useState(false);
+  const [isMobileMenu, setIsMobileMenu] = useState(false);
 
   /***** desktop menu click event ******/
   const desktopLinkTo = (url) => {
@@ -26,17 +27,20 @@ const Header = () => {
     <div className="header-section">
       <div className="container">
         <div className="d-flex align-items-center justify-content-between content">
+          <div className="mobile-menu-list" onClick={() => setIsMobileMenu(true)}>
+            <MenuIcon />
+          </div>
           <div className="logo-section">
             <img src={logoImg} alt="logo" onClick={() => desktopLinkTo('/')} />
           </div>
           <div className="menu-list d-flex align-items-center">
-            <div>
+            <div className="desktop-menu-item">
               <span onClick={() => desktopLinkTo('/team')}>Team</span>
             </div>
-            <div>
+            <div className="desktop-menu-item">
               <span onClick={() => desktopLinkTo('/contact')}>Contact</span>
             </div>
-            <div>
+            <div className="desktop-menu-item">
               <span onClick={() => desktopLinkTo('/faq')}>FAQ</span>
             </div>
             <div className="multi-lang position-relative">
@@ -62,7 +66,34 @@ const Header = () => {
           </div>
         </div>
       </div>
+      {
+        isMobileMenu &&
+        <div onClick={() => setIsMobileMenu(false)} className="overlay"></div>
+      }
+      <div style={{ width: isMobileMenu && '75%' }} className="mobile-menu">
+        <div>
+          <img src={logoImg} alt="logo" onClick={() => desktopLinkTo('/')} />
+          <div onClick={() => desktopLinkTo('/team')} className="mobile-item">
+            <span>Team</span>
+          </div>
+          <div onClick={() => desktopLinkTo('/contact')} className="mobile-item">
+            <span>Contact</span>
+          </div>
+          <div onClick={() => desktopLinkTo('/faq')} className="mobile-item">
+            <span>FAQ</span>
+          </div>
+        </div>
+
+      </div>
     </div>
+  )
+}
+
+const MenuIcon = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="white" className="bi bi-list" viewBox="0 0 16 16">
+      <path fillRule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+    </svg>
   )
 }
 

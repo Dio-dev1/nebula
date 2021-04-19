@@ -33,7 +33,7 @@ const Home = () => {
             </div>
             <div className="col-md-6">
               <div className="position-relative img-section">
-                <img src={portfolio} alt="big-phone" />
+                <img src={portfolio} alt="big-phone" className="portfilio-img" />
                 <img src={projects} alt="projects" className="position-absolute small-img" />
               </div>
             </div>
@@ -56,9 +56,9 @@ const Home = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-6">
-              <div className="img-section position-relative">
-                <img src={fundBusinessWhite} alt="fundBusinessWhite" className="fund-business-white" />
-                <img src={fundBusinessBlack} className="position-absolute fund-business-black" alt="fundBusinessBlack" />
+              <div className="img-section position-relative d-flex justify-content-end">
+                <img src={fundBusinessWhite} alt="fundBusinessWhite" className="position-absolute fund-business-white" />
+                <img src={fundBusinessBlack} className="fund-business-black" alt="fundBusinessBlack" />
               </div>
             </div>
             <div className="col-md-6 d-flex align-items-center">
