@@ -10,6 +10,11 @@
         > div {
           margin-bottom: 20px;
         }
+        .img-block {
+          @media (max-width: 576px) {
+            margin-top: 60px;
+          }
+        }
         .text-section {
 
           p {

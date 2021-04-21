@@ -67,7 +67,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div className="col-md-6 col-lg-6 col-sm-12">
+            <div className="col-md-6 col-lg-6 col-sm-12 img-block">
               <div className="position-relative img-section">
                 <img src={portfolio} alt="big-phone" className="portfilio-img" />
                 <img src={projects} alt="projects" className="position-absolute small-img" />
