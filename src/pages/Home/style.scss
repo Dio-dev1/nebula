@@ -8,7 +8,7 @@
     .container {
       .row {
         > div {
-          margin-bottom: 30px;
+          margin-bottom: 20px;
         }
         .text-section {
 
@@ -16,7 +16,16 @@
             margin-bottom: 44px;
           }
 
+          .err-msg {
+            top: -20px;
+            color: #ff003d;
+            transition: all 0.3s linear;
+            font-weight: 400;
+            font-size: 14px;
+          }
+
           .subscribe {
+            margin-top: 5px;
             padding: 8px;
             width: 485px;
             height: 60px;
@@ -39,6 +48,9 @@
             }
 
             button {
+              &.not-allow {
+                cursor: not-allowed;
+              }
               border-radius: 26px;
               font-weight: 500;
               font-size: 20px;

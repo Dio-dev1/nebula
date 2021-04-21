@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import portfolio from '../../assets/imgs/portfolio.png';
 import projects from '../../assets/imgs/projects.png';
 import fundBusinessWhite from '../../assets/imgs/fund-business-white.png';
@@ -11,8 +11,43 @@ import currencyImg from '../../assets/imgs/currency.png';
 import settingsImg from '../../assets/imgs/settings.png';
 import ordersImg from '../../assets/imgs/orders.png';
 import './style.scss';
+import { memberAdd } from '../../rest/api';
+import { toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+toast.configure();
 
 const Home = () => {
+  const [email, setEmail] = useState('');
+  const [errMsg, setErrMsg] = useState('');
+
+  const subscribe = () => {
+    if(email==='') return;
+
+    let validation = validateEmail(email);
+    if(!validation) {
+      setErrMsg('Please enter correct email address!');
+      return;
+    }
+    setErrMsg('');
+    memberAdd(email)
+      .then(data => { 
+        if(data.status==='subscribed'){
+          toast('Success! Your email has been subscribed',{type:'success'});
+        } else {
+          toast(data.detail,{type:'error'});
+        }
+       })
+      .catch(error => { console.log(JSON.stringify(error)) });
+  }
+
+  /**
+  * Validate email by pattern
+  * @param email string
+  */
+  const validateEmail = (email) => {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
 
   return (
     <div className="home-section">
@@ -25,9 +60,10 @@ const Home = () => {
               <div className="text-section">
                 <h1>Lorem ipsum dolor sit amet, cu exerci everti regione mea, iudico </h1>
                 <p>Lorem ipsum dolor sit amet, cu exerci everti regione mea, iudico vocent alterum nam ut. Id doming viderer qui, populo scripserit </p>
-                <div className="subscribe d-flex align-items-center justify-content-between">
-                  <input type="email" placeholder="your@email.com" />
-                  <button className="fill-btn">Subscribe</button>
+                <div className="subscribe d-flex align-items-center justify-content-between position-relative">
+                  <span className="err-msg position-absolute">{errMsg}</span>
+                  <input type="email" placeholder="your@email.com" value={email} onChange={(evt) => setEmail(evt.target.value)} />
+                  <button className={email==='' ? 'fill-btn not-allow' : 'fill-btn'} onClick={subscribe}>Subscribe</button>
                 </div>
               </div>
             </div>
