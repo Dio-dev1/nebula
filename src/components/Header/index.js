@@ -3,6 +3,8 @@ import logoImg from '../../assets/imgs/logo.png';
 import usFlag from '../../assets/imgs/us-flag.png';
 import './style.scss';
 import { useHistory } from 'react-router-dom';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Header = () => {
   const history = useHistory();
@@ -10,6 +12,16 @@ const Header = () => {
   const [isMobileMenu, setIsMobileMenu] = useState(false);
   const [isHeaderCN, setIsHeaderCN] = useState(false);
 
+  /****** Animation effect ******/
+  useEffect(() => {
+    AOS.init({
+      // initialise with other settings
+      duration: 1000
+    });
+    // AOS.refresh();
+  }, []);
+
+  /****** display fixed menu *******/
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 70) {
@@ -22,41 +34,50 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [isHeaderCN]);
 
-  /***** desktop menu click event ******/
-  const desktopLinkTo = (url) => {
-    history.push(url)
-  }
-
+  /****** Show multi language menu ******/
   useEffect(() => {
     document.addEventListener("click", closeSelect);
     return () => document.removeEventListener("click", closeSelect);
   }, [isSubMenu]);
+
+  /***** desktop menu click event ******/
+  const desktopLinkTo = (url) => {
+    history.push(url)
+  }
 
   const closeSelect = (evt) => {
     if (!evt.target.closest(".multi-lang-click")) setIsSubMenu(false);
   }
 
   return (
-    <div className={isHeaderCN ? 'header-section fixed-header': 'header-section'}>
+    <div className={isHeaderCN ? 'header-section fixed-header' : 'header-section'}>
       <div className="container">
         <div className="d-flex align-items-center justify-content-between content">
           <div className="mobile-menu-list" onClick={() => setIsMobileMenu(true)}>
             <MenuIcon />
           </div>
-          <div className="logo-section">
+          <div className="logo-section" data-aos="zoom-in" data-aos-duration="1000">
             <img src={logoImg} alt="logo" onClick={() => desktopLinkTo('/')} />
           </div>
           <div className="menu-list d-flex align-items-center">
-            <div className="desktop-menu-item">
+            <div className="desktop-menu-item" data-aos="fade-down"
+              data-aos-easing="linear"
+              data-aos-duration="700">
               <span onClick={() => desktopLinkTo('/team')}>Team</span>
             </div>
-            <div className="desktop-menu-item">
+            <div className="desktop-menu-item" data-aos="fade-down"
+              data-aos-easing="linear"
+              data-aos-duration="800">
               <span onClick={() => desktopLinkTo('/contact')}>Contact</span>
             </div>
-            <div className="desktop-menu-item">
+            <div className="desktop-menu-item" data-aos="fade-down"
+              data-aos-easing="linear"
+              data-aos-duration="900">
               <span onClick={() => desktopLinkTo('/faq')}>FAQ</span>
             </div>
-            <div className="multi-lang position-relative">
+            <div className="multi-lang position-relative" data-aos="fade-down"
+              data-aos-easing="linear"
+              data-aos-duration="1000">
               <div onClick={() => setIsSubMenu(true)} className="multi-lang-click">
                 <img src={usFlag} alt="countryFlag" />
                 <span>EN</span>
