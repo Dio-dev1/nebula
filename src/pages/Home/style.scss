@@ -162,6 +162,17 @@
         background-repeat: no-repeat;
       }
 
+      .business-bg-section {
+        background-image: url('../../assets/imgs/Group.png');
+        top: -480px;
+        right: 0px;
+        width: 50%;
+        background-position: center;
+        height: 867px;
+        background-repeat: no-repeat;
+        z-index: -1;
+      }
+
       .row {
         > div {
           margin-top: 30px;
@@ -215,19 +226,24 @@
     background-repeat: no-repeat;
     background-position: left center;
     background-size: 65% auto;
+    padding-bottom: 110px;
 
     // list section
     .list-section {
       margin-top: 155px;
-      .piece-bg-5 {
-        background-image: url('../../assets/imgs/pieceBg5.png');
-        top: -100px;
-        right: 10%;
-        width: 300px;
-        height: 280px;
-        background-repeat: no-repeat;
-      }
       .row {
+        .piece-bg-5 {
+          background-image: url('../../assets/imgs/pieceBg5.png');
+          top: -100px;
+          right: -100px;
+          @media (max-width: 576px) {
+            top: -50px;
+            right: 0px;
+          }
+          width: 300px;
+          height: 280px;
+          background-repeat: no-repeat;
+        }
         > div {
           margin-top: 30px;
           .content {
@@ -255,7 +271,6 @@
     // orders-settings-section
     .orders-settings-section {
       margin-top: 140px;
-      margin-bottom: 110px;
       .row {
         > div {
           margin-top: 30px;
@@ -263,14 +278,23 @@
             .orders {
               left: 0px;
               top: 41px;
-              z-index: -1;
             }
 
             .settings {
               margin-right: 50px;
+              z-index: 10;
               @media (max-width: 576px) {
                 margin: 0px;
               }
+            }
+
+            .piece-bg-6 {
+              background-image: url('../../assets/imgs/pieceBg6.png');
+              bottom: 0px;
+              left: -60px;
+              width: 215px;
+              height: 199px;
+              background-repeat: no-repeat;
             }
           }
         }

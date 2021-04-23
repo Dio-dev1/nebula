@@ -93,6 +93,7 @@ const Home = () => {
       <div className="business-trade-section">
         {/* fund your business section */}
         <div className="fund-business-section position-relative">
+          <div className="business-bg-section position-absolute"></div>
           <div className="piece-bg-4 position-absolute"></div>
           <div className="container">
             <div className="row">
@@ -135,10 +136,10 @@ const Home = () => {
 
       <div className="list-orders-section">
         {/* list section */}
-        <div className="list-section position-relative">
-          <div className="piece-bg-5 position-absolute"></div>
+        <div className="list-section">
           <div className="container">
-            <div className="row">
+            <div className="row position-relative">
+              <div className="piece-bg-5 position-absolute"></div>
               <div className="col-md-4">
                 <div className="content">
                   <div className="logo-section d-flex align-items-center justify-content-center">
@@ -179,6 +180,7 @@ const Home = () => {
             <div className="row">
               <div className="col-md-6">
                 <div className="img-section position-relative d-flex justify-content-end">
+                  <div className="piece-bg-6 position-absolute"></div>
                   <img src={settingsImg} className="settings" alt="settings" />
                   <img src={ordersImg} className="position-absolute orders" alt="orders" />
                 </div>
