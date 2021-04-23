@@ -10,12 +10,14 @@ function App() {
 
   return (
       <Router>
-        <Header />
-          <Switch>
-            <Route exact path='/' render={() => <Home />} />
-            <Redirect to='/' />
-          </Switch>
-        <Footer />
+        <div>
+          <Header />
+            <Switch>
+              <Route exact path='/' render={() => <Home />} />
+              <Redirect to='/' />
+            </Switch>
+          <Footer />
+        </div>
       </Router>
   );
 }

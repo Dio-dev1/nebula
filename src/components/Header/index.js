@@ -8,6 +8,19 @@ const Header = () => {
   const history = useHistory();
   const [isSubMenu, setIsSubMenu] = useState(false);
   const [isMobileMenu, setIsMobileMenu] = useState(false);
+  const [isHeaderCN, setIsHeaderCN] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 70) {
+        setIsHeaderCN(true);
+      } else {
+        setIsHeaderCN(false);
+      }
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [isHeaderCN]);
 
   /***** desktop menu click event ******/
   const desktopLinkTo = (url) => {
@@ -24,7 +37,7 @@ const Header = () => {
   }
 
   return (
-    <div className="header-section">
+    <div className={isHeaderCN ? 'header-section fixed-header': 'header-section'}>
       <div className="container">
         <div className="d-flex align-items-center justify-content-between content">
           <div className="mobile-menu-list" onClick={() => setIsMobileMenu(true)}>

@@ -50,10 +50,12 @@ const Home = () => {
 }
 
   return (
-    <div className="home-section">
+    <div className="home-section position-relative">
+      <div className="piece-bg-1 position-absolute"></div>
 
       {/* portfolio-projects section */}
-      <div className="portfolio-projects-section">
+      <div className="portfolio-projects-section position-relative">
+        <div className="piece-bg-2 position-absolute"></div>
         <div className="container">
           <div className="row">
             <div className="col-md-6 col-lg-6 col-sm-12 d-flex align-items-center">
@@ -67,7 +69,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div className="col-md-6 col-lg-6 col-sm-12 img-block">
+            <div className="col-md-6 col-lg-6 col-sm-12">
               <div className="position-relative img-section">
                 <img src={portfolio} alt="big-phone" className="portfilio-img" />
                 <img src={projects} alt="projects" className="position-absolute small-img" />
@@ -78,7 +80,8 @@ const Home = () => {
       </div>
 
       {/* description section */}
-      <div className="description-section w-100">
+      <div className="description-section w-100 position-relative">
+        <div className="piece-bg-3 position-absolute"></div>
         <div className="d-flex justify-content-center">
           <h1 className="text-center">Lorem ipsum dolor sit amet, cu exerci everti regione mea, iudico </h1>
         </div>
@@ -87,77 +90,42 @@ const Home = () => {
         </div>
       </div>
 
-      {/* fund your business section */}
-      <div className="fund-business-section">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-6">
-              <div className="img-section position-relative d-flex justify-content-end">
-                <img src={fundBusinessWhite} alt="fundBusinessWhite" className="position-absolute fund-business-white" />
-                <img src={fundBusinessBlack} className="fund-business-black" alt="fundBusinessBlack" />
+      <div className="business-trade-section">
+        {/* fund your business section */}
+        <div className="fund-business-section position-relative">
+          <div className="piece-bg-4 position-absolute"></div>
+          <div className="container">
+            <div className="row">
+              <div className="col-md-6">
+                <div className="img-section position-relative d-flex justify-content-end">
+                  <img src={fundBusinessWhite} alt="fundBusinessWhite" className="position-absolute fund-business-white" />
+                  <img src={fundBusinessBlack} className="fund-business-black" alt="fundBusinessBlack" />
+                </div>
               </div>
-            </div>
-            <div className="col-md-6 d-flex align-items-center">
-              <div className="text-section">
-                <h1>Lorem ipsum dolor sit amet, cu exerci everti regione mea, iudico </h1>
-                <p>Lorem ipsum dolor sit amet, cu exerci everti regione mea, iudico vocent alterum nam ut. Id doming viderer qui, populo scripserit </p>
+              <div className="col-md-6 d-flex align-items-center">
+                <div className="text-section">
+                  <h1>Lorem ipsum dolor sit amet, cu exerci everti regione mea, iudico </h1>
+                  <p>Lorem ipsum dolor sit amet, cu exerci everti regione mea, iudico vocent alterum nam ut. Id doming viderer qui, populo scripserit </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* trade section */}
-      <div className="trade-section">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-6 d-flex align-items-center">
-              <div className="text-section">
-                <h1>Lorem ipsum dolor sit amet, cu exerci everti regione mea, iudico </h1>
-                <p>Lorem ipsum dolor sit amet, cu exerci everti regione mea, iudico vocent alterum nam ut. Id doming viderer qui, populo scripserit </p>
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div className="img-section position-relative">
-                <img src={tradeBigImg} className="trade-big" alt="tradeBigImg" />
-                <img src={tradeSmallImg} className="position-absolute trade-small" alt="tradeSmallImg" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* list section */}
-      <div className="list-section">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-4">
-              <div className="content">
-                <div className="logo-section d-flex align-items-center justify-content-center">
-                  <img src={increaseImg} alt="increaseimg" />
-                </div>
-                <div className="description">
-                  Lorem ipsum dolor sit amet, cu exerci everti regione mea, iudico vocent alterum nam ut. Id doming vi
+        {/* trade section */}
+        <div className="trade-section">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-6 d-flex align-items-center">
+                <div className="text-section">
+                  <h1>Lorem ipsum dolor sit amet, cu exerci everti regione mea, iudico </h1>
+                  <p>Lorem ipsum dolor sit amet, cu exerci everti regione mea, iudico vocent alterum nam ut. Id doming viderer qui, populo scripserit </p>
                 </div>
               </div>
-            </div>
-            <div className="col-md-4">
-              <div className="content">
-                <div className="logo-section d-flex align-items-center justify-content-center">
-                  <img src={bitcoinImg} alt="bitcoinImg" />
-                </div>
-                <div className="description">
-                  Lorem ipsum dolor sit amet, cu exerci everti regione mea, iudico vocent alterum nam ut. Id doming vi
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="content">
-                <div className="logo-section d-flex align-items-center justify-content-center">
-                  <img src={currencyImg} alt="currencyImg" />
-                </div>
-                <div className="description">
-                  Lorem ipsum dolor sit amet, cu exerci everti regione mea, iudico vocent alterum nam ut. Id doming vi
+              <div className="col-md-6">
+                <div className="img-section position-relative">
+                  <img src={tradeBigImg} className="trade-big" alt="tradeBigImg" />
+                  <img src={tradeSmallImg} className="position-absolute trade-small" alt="tradeSmallImg" />
                 </div>
               </div>
             </div>
@@ -165,25 +133,67 @@ const Home = () => {
         </div>
       </div>
 
-      {/* orders-settings section */}
-      <div className="orders-settings-section">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-6">
-              <div className="img-section position-relative d-flex justify-content-end">
-                <img src={settingsImg} className="settings" alt="settings" />
-                <img src={ordersImg} className="position-absolute orders" alt="orders" />
+      <div className="list-orders-section">
+        {/* list section */}
+        <div className="list-section position-relative">
+          <div className="piece-bg-5 position-absolute"></div>
+          <div className="container">
+            <div className="row">
+              <div className="col-md-4">
+                <div className="content">
+                  <div className="logo-section d-flex align-items-center justify-content-center">
+                    <img src={increaseImg} alt="increaseimg" />
+                  </div>
+                  <div className="description">
+                    Lorem ipsum dolor sit amet, cu exerci everti regione mea, iudico vocent alterum nam ut. Id doming vi
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div className="content">
+                  <div className="logo-section d-flex align-items-center justify-content-center">
+                    <img src={bitcoinImg} alt="bitcoinImg" />
+                  </div>
+                  <div className="description">
+                    Lorem ipsum dolor sit amet, cu exerci everti regione mea, iudico vocent alterum nam ut. Id doming vi
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div className="content">
+                  <div className="logo-section d-flex align-items-center justify-content-center">
+                    <img src={currencyImg} alt="currencyImg" />
+                  </div>
+                  <div className="description">
+                    Lorem ipsum dolor sit amet, cu exerci everti regione mea, iudico vocent alterum nam ut. Id doming vi
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="col-md-6 d-flex align-items-center">
-              <div className="text-section">
-                <h1>Lorem ipsum dolor sit amet, cu exerci everti regione mea, iudico </h1>
-                <p>Lorem ipsum dolor sit amet, cu exerci everti regione mea, iudico vocent alterum nam ut. Id doming viderer qui, populo scripserit </p>
+          </div>
+        </div>
+
+        {/* orders-settings section */}
+        <div className="orders-settings-section">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-6">
+                <div className="img-section position-relative d-flex justify-content-end">
+                  <img src={settingsImg} className="settings" alt="settings" />
+                  <img src={ordersImg} className="position-absolute orders" alt="orders" />
+                </div>
+              </div>
+              <div className="col-md-6 d-flex align-items-center">
+                <div className="text-section">
+                  <h1>Lorem ipsum dolor sit amet, cu exerci everti regione mea, iudico </h1>
+                  <p>Lorem ipsum dolor sit amet, cu exerci everti regione mea, iudico vocent alterum nam ut. Id doming viderer qui, populo scripserit </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      
 
     </div>
   )

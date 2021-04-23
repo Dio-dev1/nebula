@@ -3,17 +3,40 @@
 */
 
 .home-section {
+  padding-top: 30px;
+
+  .piece-bg-1 {
+    background-image: url('../../assets/imgs/pieceBg1.png');
+    top: 0px;
+    left: 40%;
+    width: 257px;
+    height: 130px;
+    background-repeat: no-repeat;
+    @media (max-width: 768px) {
+      left: 25%;
+    }
+  }
 
   .portfolio-projects-section {
+    padding-bottom: 160px;
+    padding-top: 200px;
+    background-image: url('../../assets/imgs/background.png');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 80% auto;
+
+    .piece-bg-2 {
+      background-image: url('../../assets/imgs/pieceBg2.png');
+      bottom: 100px;
+      left: 0px;
+      width: 100px;
+      height: 186px;
+      background-repeat: no-repeat;
+    }
     .container {
       .row {
         > div {
           margin-bottom: 20px;
-        }
-        .img-block {
-          @media (max-width: 576px) {
-            margin-top: 60px;
-          }
         }
         .text-section {
 
@@ -97,9 +120,17 @@
 
   // description-section
   .description-section {
-    margin-top: 160px;
     background: #202429;
     border: 1px solid #000000;
+
+    .piece-bg-3 {
+      background-image: url('../../assets/imgs/pieceBg3.png');
+      top: -158px;
+      right: 0px;
+      width: 75px;
+      height: 280px;
+      background-repeat: no-repeat;
+    }
     h1 {
       margin-bottom: 20px;
       margin-top: 78px;
@@ -114,95 +145,36 @@
     }
   }
 
-  // fund your business section
-  .fund-business-section {
-    margin-top: 60px;
-
-    .row {
-      > div {
-        margin-top: 30px;
+  .business-trade-section {
+    background-image: url('../../assets/imgs/background.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 65% auto;
+    // fund your business section
+    .fund-business-section {
+      margin-top: 60px;
+      .piece-bg-4 {
+        background-image: url('../../assets/imgs/pieceBg4.png');
+        bottom: -65px;
+        right: 0px;
+        width: 150px;
+        height: 280px;
+        background-repeat: no-repeat;
       }
-      .img-section {
-        .fund-business-white {
-          top: 50px;
-          left: 0px;
-          z-index: -1;
+
+      .row {
+        > div {
+          margin-top: 30px;
         }
-        
-        .fund-business-black {
-          margin-right: 40px;
-          @media (max-width: 576px) {
-            margin: 0px;
-          }
-        }
-      }
-    }
-
-  }
-
-  // trade section
-  .trade-section {
-    margin-top: 100px;
-    .row {
-      > div {
-        margin-top: 30px;
-
         .img-section {
-          .trade-big {
-            margin-left: 50px;
-            @media (max-width: 576px) {
-              margin: 0px;
-            }
-          }
-          .trade-small {
-            right: 0px;
-            top: 41px;
-            z-index: -1;
-          }
-        }
-      }
-    }
-  }
-
-  // list section
-  .list-section {
-    margin-top: 155px;
-    .row {
-      > div {
-        margin-top: 30px;
-        .content {
-          padding: 50px 40px;
-          background: #202429;
-          border: 1px solid #000000;
-          border-radius: 10px;
-
-          .description {
-            margin-top: 45px;
-            font-size: 20px;
-            text-align: center;
-            color: #656C74;
-          }
-        }
-      }
-    }
-  }
-
-  // orders-settings-section
-  .orders-settings-section {
-    margin-top: 140px;
-    margin-bottom: 110px;
-    .row {
-      > div {
-        margin-top: 30px;
-        .img-section {
-          .orders {
+          .fund-business-white {
+            top: 50px;
             left: 0px;
-            top: 41px;
-            z-index: -1;
           }
-
-          .settings {
-            margin-right: 50px;
+          
+          .fund-business-black {
+            z-index: 10;
+            margin-right: 40px;
             @media (max-width: 576px) {
               margin: 0px;
             }
@@ -210,5 +182,100 @@
         }
       }
     }
+
+    // trade section
+    .trade-section {
+      margin-top: 100px;
+      .row {
+        > div {
+          margin-top: 30px;
+
+          .img-section {
+            .trade-big {
+              margin-left: 50px;
+              @media (max-width: 576px) {
+                margin: 0px;
+              }
+            }
+            .trade-big {
+              z-index: 10;
+            }
+            .trade-small {
+              right: 0px;
+              top: 41px;
+            }
+          }
+        }
+      }
+    }
   }
+  
+  .list-orders-section {
+    background-image: url('../../assets/imgs/background.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 65% auto;
+
+    // list section
+    .list-section {
+      margin-top: 155px;
+      .piece-bg-5 {
+        background-image: url('../../assets/imgs/pieceBg5.png');
+        top: -100px;
+        right: 10%;
+        width: 300px;
+        height: 280px;
+        background-repeat: no-repeat;
+      }
+      .row {
+        > div {
+          margin-top: 30px;
+          .content {
+            padding: 50px 40px;
+            background: #202429;
+            border: 1px solid #000000;
+            border-radius: 10px;
+            transition: all 0.3s;
+
+            .description {
+              margin-top: 45px;
+              font-size: 20px;
+              text-align: center;
+              color: #656C74;
+            }
+
+            &:hover {
+              transform: scale(1.07);
+            }
+          }
+        }
+      }
+    }
+
+    // orders-settings-section
+    .orders-settings-section {
+      margin-top: 140px;
+      margin-bottom: 110px;
+      .row {
+        > div {
+          margin-top: 30px;
+          .img-section {
+            .orders {
+              left: 0px;
+              top: 41px;
+              z-index: -1;
+            }
+
+            .settings {
+              margin-right: 50px;
+              @media (max-width: 576px) {
+                margin: 0px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
 }
