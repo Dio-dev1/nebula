@@ -14,21 +14,11 @@ import './style.scss';
 import { memberAdd } from '../../rest/api';
 import { toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
-import AOS from "aos";
-import "aos/dist/aos.css";
 toast.configure();
 
 const Home = () => {
   const [email, setEmail] = useState('');
   const [errMsg, setErrMsg] = useState('');
-
-  useEffect(() => {
-    AOS.init({
-      // initialise with other settings
-    duration : 1000
-    });
-    AOS.refresh();
-  }, []);
 
   /****** Subscribe email by a click a button ******/
   const subscribe = () => {

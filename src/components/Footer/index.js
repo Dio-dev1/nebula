@@ -11,21 +11,21 @@ const Footer = () => {
     <div className="footer-section d-flex align-items-center justify-content-center">
       <div className="content">
         <div className="social-lists d-flex align-items-center">
-          <div className="item d-flex align-items-center justify-content-center">
+          <div className="item d-flex align-items-center justify-content-center" data-aos="zoom-in">
             <a href="replace"><img src={facebookImg} alt="facebookImg" /></a>
           </div>
-          <div className="item d-flex align-items-center justify-content-center">
+          <div className="item d-flex align-items-center justify-content-center" data-aos="zoom-in" >
             <a href="replace"><img src={linkedinImg} alt="linkedinImg" /></a>
           </div>
-          <div className="item d-flex align-items-center justify-content-center">
+          <div className="item d-flex align-items-center justify-content-center" data-aos="zoom-in">
             <a href="replace"><img src={instagramImg} alt="instagramImg" /></a>
           </div>
-          <div className="item d-flex align-items-center justify-content-center">
+          <div className="item d-flex align-items-center justify-content-center" data-aos="zoom-in">
             <a href="replace"><img src={twitterImg} alt="twitterImg" /></a>
           </div>
         </div>
-        <p className="text-center">Privacy Policy and Terms of Service</p>
-        <p className="text-center">App version 3.2.4, Build 23456, CP Version 6.0</p>
+        <p className="text-center" data-aos="zoom-in">Privacy Policy and Terms of Service</p>
+        <p className="text-center" data-aos="zoom-in">App version 3.2.4, Build 23456, CP Version 6.0</p>
       </div>
     </div>
   )

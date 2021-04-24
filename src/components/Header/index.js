@@ -3,23 +3,12 @@ import logoImg from '../../assets/imgs/logo.png';
 import usFlag from '../../assets/imgs/us-flag.png';
 import './style.scss';
 import { useHistory } from 'react-router-dom';
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const Header = () => {
   const history = useHistory();
   const [isSubMenu, setIsSubMenu] = useState(false);
   const [isMobileMenu, setIsMobileMenu] = useState(false);
   const [isHeaderCN, setIsHeaderCN] = useState(false);
-
-  /****** Animation effect ******/
-  useEffect(() => {
-    AOS.init({
-      // initialise with other settings
-      duration: 1000
-    });
-    // AOS.refresh();
-  }, []);
 
   /****** display fixed menu *******/
   useEffect(() => {
