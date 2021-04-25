@@ -61,11 +61,8 @@ const Home = () => {
           <div className="row">
             <div className="col-md-6 col-lg-6 col-sm-12 d-flex align-items-center">
               <div className="text-section"  data-aos="fade-right">
-                <h1>Nebula Capital<br />
-Democratized Finance for The Digital Economy<br />
-Take back control with the ultimate investments marketplace designed for the democratization of global capital access through tokenized assets and ventures.<br />
-We have adopted the ideal to reality</h1>
-                <p>Find out more about how you can reach new investment opportunities, through nebula.</p>
+                <h1>Democratized Finance for The Digital Economy</h1>
+                <p>Find out more about how you can reach new investment opportunities, through Nebula Capital.</p>
                 <div className="subscribe d-flex align-items-center justify-content-between position-relative">
                   <span className="err-msg position-absolute">{errMsg}</span>
                   <input type="email" placeholder="your@email.com" value={email} onChange={(evt) => setEmail(evt.target.value)} />
@@ -89,12 +86,12 @@ We have adopted the ideal to reality</h1>
         <div className="d-flex justify-content-center" data-aos="fade-down"
             data-aos-easing="linear"
             data-aos-duration="1000">
-          <h1 className="text-center">Start investing today with nebula!</h1>
+          <h1 className="text-center">Start investitng today with Nebula Capital!</h1>
         </div>
         <div className="d-flex justify-content-center" data-aos="fade-up"
             data-aos-easing="linear"
             data-aos-duration="1000">
-          <p className="text-center">Enable your assets to get involved in the economy's growth.</p>
+          <p className="text-center">Take back control with the ultimate investments marketplace designed for the democratization of global capital access through tokenized assets and ventures.</p>
         </div>
       </div>
 
@@ -156,7 +153,7 @@ We have adopted the ideal to reality</h1>
                     <img src={increaseImg} alt="increaseimg" />
                   </div>
                   <div className="description">
-                    Profit from the Nebula marketplace's evolution, through delegation.
+                  Profit from the Nebula marketplace's evolution, through fee redistribution.
                   </div>
                 </div>
               </div>
@@ -166,7 +163,7 @@ We have adopted the ideal to reality</h1>
                     <img src={bitcoinImg} alt="bitcoinImg" />
                   </div>
                   <div className="description">
-                    Be exposed to the crypto phenomenon, with an emphasis on the technological advantages.
+                  Digital tokens backed up by real world businesses & secured by blockchain technology.
                   </div>
                 </div>
               </div>
