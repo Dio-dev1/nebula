@@ -10,6 +10,8 @@ import bitcoinImg from '../../assets/imgs/bitcoin.png';
 import currencyImg from '../../assets/imgs/currency.png';
 import settingsImg from '../../assets/imgs/settings.png';
 import ordersImg from '../../assets/imgs/orders.png';
+import chartImg from '../../assets/imgs/chart.png'
+import roadImg from '../../assets/imgs/road.png'
 import './style.scss';
 import { memberAdd } from '../../rest/api';
 import { toast } from 'react-toastify';
@@ -201,8 +203,25 @@ const Home = () => {
             </div>
           </div>
         </div>
+        <div className="container" style={{marginTop: '80px'}} data-aos="zoom-in">
+          <h1 className="text-center">Lorem ipsum dolor sit amet, cu exerci everti regione mea, iudico</h1>
+          <p className="text-center">Lorem ipsum dolor sit amet, cu exerci everti regione mea, iudico<br /> vocent alterum nam ut. Id doming viderer qui, populo scripserit </p>
+        </div>
       </div>
       
+      <div className="chart-section">
+        <div className="piece-bg-7"></div>
+        <div className="circle-chart-section container" data-aos="fade-left">
+          <img src={chartImg} alt="chart-img" className="w-100" />
+        </div>
+        <div className="container" style={{marginTop: '80px'}} data-aos="zoom-in">
+          <h1 className="text-center">Lorem ipsum dolor sit amet, cu</h1>
+          <p className="text-center">Lorem ipsum dolor sit amet, cu exerci everti regione mea, iudico<br /> vocent alterum nam ut. Id doming viderer qui, populo scripserit </p>
+        </div>
+        <div className="road-section container" style={{marginTop: '150px', marginBottom: '150px'}} data-aos="fade-right">
+          <img src={roadImg} alt="road-img" className="w-100" />
+        </div>
+      </div>
 
     </div>
   )

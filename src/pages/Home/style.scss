@@ -299,4 +299,25 @@
     }
   }
 
+  .chart-section {
+    background-image: url('../../assets/imgs/background.png');
+    background-repeat: no-repeat;
+    background-position: top right;
+    position: relative;
+
+    .piece-bg-7 {
+      position: absolute;
+      background-image: url('../../assets/imgs/pieceBg7.png');
+      top: 400px;
+      right: 0px;
+      width: 234px;
+      height: 300px;
+      background-repeat: no-repeat;
+    }
+
+    .road-section {
+      background-color:#000000;
+    }
+  }
+
 }
