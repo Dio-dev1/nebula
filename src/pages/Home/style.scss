@@ -309,6 +309,7 @@
     position: relative;
 
     .piece-bg-7 {
+      display: block;
       position: absolute;
       background-image: url('../../assets/imgs/pieceBg7.png');
       top: 400px;
@@ -316,8 +317,8 @@
       width: 234px;
       height: 300px;
       background-repeat: no-repeat;
-      @media (max-width: 576px) {
-        top: 200px;
+      @media (max-width: 768px) {
+        display: none;
       }
     }
 
