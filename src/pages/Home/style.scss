@@ -2,6 +2,12 @@
   Home Section
 */
 
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+  }
+}
+
 .home-section {
   padding-top: 30px;
 
