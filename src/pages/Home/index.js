@@ -107,7 +107,12 @@ const Home = () => {
               <div className="col-md-6" data-aos="fade-right">
                 <div className="img-section position-relative d-flex justify-content-end">
                   <img src={fundBusinessWhite} alt="fundBusinessWhite" className="position-absolute fund-business-white" />
-                  <img src={fundBusinessBlack} className="fund-business-black" alt="fundBusinessBlack" />
+                  {/* <img src={fundBusinessBlack} className="fund-business-black" alt="fundBusinessBlack" /> */}
+                  <div className="fund-business-black">
+                  <iframe
+                    src="https://appetize.io/embed/pj8aa047hwgutvk60vcry9uc5w?device=Pixel4"
+                    width="320px" height="700px" frameBorder="0" scrolling="no"></iframe>
+                  </div>
                 </div>
               </div>
               <div className="col-md-6 d-flex align-items-center" data-aos="fade-left">
