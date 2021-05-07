@@ -57,7 +57,7 @@ const Home = () => {
     <div className="home-section position-relative">
       <div className="piece-bg-1 position-absolute"></div>
       <div className="w-100 mb-5">
-        <video loop autoPlay muted poster={tradeBigImg} id="environment-video" className="w-100">
+        <video loop autoPlay muted id="environment-video" className="w-100">
               <source src={videoSource} type="video/mp4" />
         </video>
       </div>
