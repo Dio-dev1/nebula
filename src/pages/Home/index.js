@@ -93,7 +93,7 @@ const Home = () => {
         <div className="d-flex justify-content-center" data-aos="fade-down"
             data-aos-easing="linear"
             data-aos-duration="1000">
-          <h1 className="text-center">Start investitng today with Nebula Capital!</h1>
+          <h1 className="text-center">Start investing today with Nebula Capital!</h1>
         </div>
         <div className="d-flex justify-content-center" data-aos="fade-up"
             data-aos-easing="linear"
