@@ -12,6 +12,7 @@ import settingsImg from '../../assets/imgs/settings.png';
 import ordersImg from '../../assets/imgs/orders.png';
 import chartImg from '../../assets/imgs/chart.png'
 import roadImg from '../../assets/imgs/road.png'
+import videoSource from '../../assets/imgs/video.mp4'
 import './style.scss';
 import { memberAdd } from '../../rest/api';
 import { toast } from 'react-toastify';
@@ -55,7 +56,11 @@ const Home = () => {
   return (
     <div className="home-section position-relative">
       <div className="piece-bg-1 position-absolute"></div>
-
+      <div className="w-100 mb-5">
+        <video loop autoPlay muted poster={tradeBigImg} id="environment-video" className="w-100">
+              <source src={videoSource} type="video/mp4" />
+        </video>
+      </div>
       {/* portfolio-projects section */}
       <div className="portfolio-projects-section position-relative">
         <div className="piece-bg-2 position-absolute"></div>
