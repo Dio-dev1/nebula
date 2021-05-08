@@ -12,7 +12,6 @@ import settingsImg from '../../assets/imgs/settings.png';
 import ordersImg from '../../assets/imgs/orders.png';
 import chartImg from '../../assets/imgs/chart.png'
 import roadImg from '../../assets/imgs/road.png'
-import videoSource from '../../assets/imgs/video.mp4'
 import './style.scss';
 import { memberAdd } from '../../rest/api';
 import { toast } from 'react-toastify';
@@ -22,7 +21,6 @@ toast.configure();
 const Home = () => {
   const [email, setEmail] = useState('');
   const [errMsg, setErrMsg] = useState('');
-  const [enableElement, setEnableElement] = useState(true)
 
   /****** Subscribe email by a click a button ******/
   const subscribe = () => {
@@ -57,20 +55,13 @@ const Home = () => {
   return (
     <div className="home-section position-relative">
       <div className="piece-bg-1 position-absolute"></div>
-      {enableElement && (
-        <div className="w-100 mb-5 video-container">
-          <video autoPlay muted id="environment-video" className="w-100" onEnded={() => setEnableElement(false)}>
-            <source src={videoSource} type="video/mp4" />
-          </video>
-        </div>
-      )}
 
       {/* portfolio-projects section */}
       <div className="portfolio-projects-section position-relative">
         <div className="piece-bg-2 position-absolute"></div>
         <div className="container">
           <div className="row">
-            <div className="col-md-6 col-lg-6 col-sm-12 d-flex align-items-center">
+            <div className="col-md-6 col-lg-6 col-sm-12 d-flex align-items-center" data-aos="fade-left">
               <div className="text-section">
                 <h1>Democratized Finance for The Digital Economy</h1>
                 <p>Find out more about how you can reach new investment opportunities, through Nebula Capital.</p>
@@ -81,7 +72,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div className="col-md-6 col-lg-6 col-sm-12">
+            <div className="col-md-6 col-lg-6 col-sm-12" data-aos="fade-right">
               <div className="position-relative img-section">
                 <img src={portfolio} alt="big-phone" className="portfilio-img" />
                 <img src={projects} alt="projects" className="position-absolute small-img" />
