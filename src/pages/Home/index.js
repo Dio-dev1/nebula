@@ -22,25 +22,26 @@ toast.configure();
 const Home = () => {
   const [email, setEmail] = useState('');
   const [errMsg, setErrMsg] = useState('');
+  const [enableElement, setEnableElement] = useState(true)
 
   /****** Subscribe email by a click a button ******/
   const subscribe = () => {
-    if(email==='') return;
+    if (email === '') return;
 
     let validation = validateEmail(email);
-    if(!validation) {
+    if (!validation) {
       setErrMsg('Please enter correct email address!');
       return;
     }
     setErrMsg('');
     memberAdd(email)
-      .then(data => { 
-        if(data.status==='subscribed'){
-          toast('Success! Your email has been subscribed',{type:'success'});
+      .then(data => {
+        if (data.status === 'subscribed') {
+          toast('Success! Your email has been subscribed', { type: 'success' });
         } else {
-          toast(data.detail,{type:'error'});
+          toast(data.detail, { type: 'error' });
         }
-       })
+      })
       .catch(error => { console.log(JSON.stringify(error)) });
   }
 
@@ -51,34 +52,37 @@ const Home = () => {
   const validateEmail = (email) => {
     const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
-}
+  }
 
   return (
     <div className="home-section position-relative">
       <div className="piece-bg-1 position-absolute"></div>
-      <div className="w-100 mb-5">
-        <video loop autoPlay muted id="environment-video" className="w-100">
-              <source src={videoSource} type="video/mp4" />
-        </video>
-      </div>
+      {enableElement && (
+        <div className="w-100 mb-5 video-container">
+          <video autoPlay muted id="environment-video" className="w-100" onEnded={() => setEnableElement(false)}>
+            <source src={videoSource} type="video/mp4" />
+          </video>
+        </div>
+      )}
+
       {/* portfolio-projects section */}
       <div className="portfolio-projects-section position-relative">
         <div className="piece-bg-2 position-absolute"></div>
         <div className="container">
           <div className="row">
             <div className="col-md-6 col-lg-6 col-sm-12 d-flex align-items-center">
-              <div className="text-section"  data-aos="fade-right">
+              <div className="text-section">
                 <h1>Democratized Finance for The Digital Economy</h1>
                 <p>Find out more about how you can reach new investment opportunities, through Nebula Capital.</p>
                 <div className="subscribe d-flex align-items-center justify-content-between position-relative">
                   <span className="err-msg position-absolute">{errMsg}</span>
                   <input type="email" placeholder="your@email.com" value={email} onChange={(evt) => setEmail(evt.target.value)} />
-                  <button className={email==='' ? 'fill-btn not-allow' : 'fill-btn'} onClick={subscribe}>Subscribe</button>
+                  <button className={email === '' ? 'fill-btn not-allow' : 'fill-btn'} onClick={subscribe}>Subscribe</button>
                 </div>
               </div>
             </div>
             <div className="col-md-6 col-lg-6 col-sm-12">
-              <div className="position-relative img-section" data-aos="fade-left">
+              <div className="position-relative img-section">
                 <img src={portfolio} alt="big-phone" className="portfilio-img" />
                 <img src={projects} alt="projects" className="position-absolute small-img" />
               </div>
@@ -91,13 +95,13 @@ const Home = () => {
       <div className="description-section w-100 position-relative">
         <div className="piece-bg-3 position-absolute"></div>
         <div className="d-flex justify-content-center" data-aos="fade-down"
-            data-aos-easing="linear"
-            data-aos-duration="1000">
+          data-aos-easing="linear"
+          data-aos-duration="1000">
           <h1 className="text-center">Start investing today with Nebula Capital!</h1>
         </div>
         <div className="d-flex justify-content-center" data-aos="fade-up"
-            data-aos-easing="linear"
-            data-aos-duration="1000">
+          data-aos-easing="linear"
+          data-aos-duration="1000">
           <p className="text-center">Take back control with the ultimate investments marketplace designed for the democratization of global capital access through tokenized assets and ventures.</p>
         </div>
       </div>
@@ -112,12 +116,7 @@ const Home = () => {
               <div className="col-md-6" data-aos="fade-right">
                 <div className="img-section position-relative d-flex justify-content-end">
                   <img src={fundBusinessWhite} alt="fundBusinessWhite" className="position-absolute fund-business-white" />
-                  {/* <img src={fundBusinessBlack} className="fund-business-black" alt="fundBusinessBlack" /> */}
-                  <div className="fund-business-black">
-                  <iframe
-                    src="https://appetize.io/embed/pj8aa047hwgutvk60vcry9uc5w?device=Pixel4"
-                    width="320px" height="700px" frameBorder="0" scrolling="no"></iframe>
-                  </div>
+                  <img src={fundBusinessBlack} className="fund-business-black" alt="fundBusinessBlack" />
                 </div>
               </div>
               <div className="col-md-6 d-flex align-items-center" data-aos="fade-left">
@@ -138,7 +137,7 @@ const Home = () => {
                 <div className="text-section">
                   <h1>We offer you efficient decision-making solutions!</h1>
                   <p>Instantly track your investment's evolution through our mobile app, while contantly keeping in touch iwth the projects you have invested inh.
-                    Transparency is the key in successful investments!
+                  Transparency is the key in successful investments!
                   </p>
                 </div>
               </div>
@@ -165,7 +164,7 @@ const Home = () => {
                     <img src={increaseImg} alt="increaseimg" />
                   </div>
                   <div className="description">
-                  Profit from the Nebula marketplace's evolution, through fee redistribution.
+                    Profit from the Nebula marketplace's evolution, through fee redistribution.
                   </div>
                 </div>
               </div>
@@ -175,7 +174,7 @@ const Home = () => {
                     <img src={bitcoinImg} alt="bitcoinImg" />
                   </div>
                   <div className="description">
-                  Digital tokens backed up by real world businesses & secured by blockchain technology.
+                    Digital tokens backed up by real world businesses & secured by blockchain technology.
                   </div>
                 </div>
               </div>
@@ -185,7 +184,7 @@ const Home = () => {
                     <img src={currencyImg} alt="currencyImg" />
                   </div>
                   <div className="description">
-                   Keep your crypto assets as liquid as possible with Nebula.
+                    Keep your crypto assets as liquid as possible with Nebula.
                   </div>
                 </div>
               </div>
@@ -213,22 +212,22 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="container" style={{marginTop: '80px'}} data-aos="zoom-in">
-          <h1 className="text-center">Lorem ipsum dolor sit amet, cu exerci everti regione mea, iudico</h1>
-          <p className="text-center">Lorem ipsum dolor sit amet, cu exerci everti regione mea, iudico<br /> vocent alterum nam ut. Id doming viderer qui, populo scripserit </p>
+        <div className="container growth-reason" data-aos="zoom-in">
+          <h1 className="text-center">We give a reason to growth!</h1>
+          <p className="text-center">Our digital economy resembles the real one, by allowing the market forces to drive economic growth, rather than pure speculation, everything being encapsulated in a structure meant to promote stability.</p>
         </div>
       </div>
-      
+
       <div className="chart-section">
         <div className="piece-bg-7"></div>
         <div className="circle-chart-section container" data-aos="fade-left">
           <img src={chartImg} alt="chart-img" className="w-100" />
         </div>
-        <div className="container" style={{marginTop: '80px'}} data-aos="zoom-in">
-          <h1 className="text-center">Lorem ipsum dolor sit amet, cu</h1>
-          <p className="text-center">Lorem ipsum dolor sit amet, cu exerci everti regione mea, iudico<br /> vocent alterum nam ut. Id doming viderer qui, populo scripserit </p>
+        <div className="container present-goal" data-aos="zoom-in">
+          <h1 className="text-center">Our goal is to make your present future proof</h1>
+          <p className="text-center">Become part of our journey by exposing yourself to our continuously evolying infrastructure. Stay tuned for upcoming projects!</p>
         </div>
-        <div className="road-section container" style={{marginTop: '150px', marginBottom: '150px'}} data-aos="fade-right">
+        <div className="road-section container" style={{ marginTop: '150px', marginBottom: '150px' }} data-aos="fade-right">
           <img src={roadImg} alt="road-img" className="w-100" />
         </div>
       </div>

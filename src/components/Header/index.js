@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import logoImg from '../../assets/imgs/logo.png';
+import logoImg from '../../assets/imgs/logo1.png';
 import usFlag from '../../assets/imgs/us-flag.png';
 import './style.scss';
 import { useHistory } from 'react-router-dom';

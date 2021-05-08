@@ -9,6 +9,22 @@
 }
 
 .home-section {
+  .video-container {
+    height: 100vh;
+    overflow: hidden;
+    video {
+      object-fit: cover;
+      height: 100%;
+      background-color: #000000;
+    }
+  }
+  @media (max-width: 576px) {
+    padding-top: 112px;
+    .video-container {
+      height: calc( 100vh - 112px);
+    }
+  }
+
 
   .piece-bg-1 {
     background-image: url('../../assets/imgs/pieceBg1.png');
@@ -306,6 +322,10 @@
         }
       }
     }
+
+    .growth-reason {
+      margin-top: 130px;
+    }
   }
 
   .chart-section {
@@ -330,6 +350,10 @@
 
     .road-section {
       background-color:#000000;
+    }
+
+    .present-goal {
+      margin-top: 150px;
     }
   }
 

@@ -9,10 +9,13 @@
   width: 100%;
   transition: all 0.3s;
 
+  @media (max-width: 576px) {
+    background: #000000;
+  }
+
   &.fixed-header {
-    background-color: rgb(255, 255, 255);
     box-shadow: #ffffff1a 0px 15px 45px -5px;
-    background: #202429;
+    background: #000000;
     .container {
       .content {
         margin: 20px 0px;
@@ -25,7 +28,7 @@
     .content {
       margin: 80px 0px;
       @media (max-width: 576px) {
-        margin: 30px 0px;
+        margin: 20px 0px;
       }
       .mobile-menu-list {
         display: none;
@@ -40,7 +43,7 @@
       .logo-section {
         > img {
           cursor: pointer;
-          width: 70px;
+          width: 170px;
         }
       }
 
