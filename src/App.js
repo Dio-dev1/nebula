@@ -31,7 +31,7 @@ function App() {
     <Router>
       {enableElement && (
         <div className="w-100 video-container">
-          <video autoPlay muted playsinline id="environment-video" className="w-100" onEnded={() => hideVideoElement(false)}>
+          <video autoPlay muted playsinline id="environment-video" className="w-100 custom-video" onEnded={() => hideVideoElement(false)}>
             <source src={videoSource} type="video/mp4" />
           </video>
         </div>
