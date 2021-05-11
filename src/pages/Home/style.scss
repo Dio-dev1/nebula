@@ -124,6 +124,11 @@
         } 
       }
 
+      .first-img-section {
+        @media (max-width: 576px) {
+          margin-top: 70px;
+        }
+      }
     }
   }
 
