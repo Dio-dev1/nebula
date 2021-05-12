@@ -32,7 +32,7 @@ function App() {
     <Router>
       {enableElement && (
         <div className="w-100 video-container">
-          <video playsinline autoplay="true" muted id="environment-video" className="w-100 custom-video" onEnded={() => hideVideoElement(false)}>
+          <video autoplay="true" muted id="environment-video" className="w-100 custom-video" onEnded={() => hideVideoElement(false)} playsinline>
             <source src={videoSource} type="video/mp4" />
             <source src={webmVideo} type="video/webm" />
           </video>
