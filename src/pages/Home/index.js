@@ -204,7 +204,7 @@ const Home = () => {
           </div>
         </div>
         <div className="container growth-reason" data-aos="zoom-in">
-          <h1 className="text-center">We give a reason to growth!</h1>
+          <h1 className="text-center">We drive sustainable growth!</h1>
           <p className="text-center">Our digital economy resembles the real one, by allowing the market forces to drive economic growth, rather than pure speculation, everything being encapsulated in a structure meant to promote stability.</p>
         </div>
       </div>
