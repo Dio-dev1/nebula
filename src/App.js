@@ -18,7 +18,7 @@ function App() {
   useEffect(() => {
     AOS.init({
       // initialise with other settings
-      duration: 1000
+      duration: 500
     });
   }, []);
 
