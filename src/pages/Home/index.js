@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import portfolio from '../../assets/imgs/portfolio.png';
 import projects from '../../assets/imgs/projects.png';
 import fundBusinessWhite from '../../assets/imgs/fund-business-white.png';
