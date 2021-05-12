@@ -212,7 +212,7 @@ const Home = () => {
       <div className="chart-section">
         <div className="piece-bg-7"></div>
         <div className="circle-chart-section container" data-aos="fade-left">
-          <img src={chartImg} alt="chart-img" className="w-100" />
+          <img src={chartImg} alt="chart-img" />
         </div>
         <div className="container present-goal" data-aos="zoom-in">
           <h1 className="text-center">Our goal is to make your present future proof</h1>
