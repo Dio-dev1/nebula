@@ -219,7 +219,7 @@ const Home = () => {
           <p className="text-center">Become part of our journey by exposing yourself to our continuously evolying infrastructure. Stay tuned for upcoming projects!</p>
         </div>
         <div className="road-section container" style={{ marginTop: '150px', marginBottom: '150px' }} data-aos="fade-right">
-          <img src={roadImg} alt="road-img" className="w-100" />
+          <img src={roadImg} alt="road-img" />
         </div>
       </div>
 
